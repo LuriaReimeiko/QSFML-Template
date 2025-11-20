@@ -30,3 +30,12 @@
 *.exe
 *.out
 *.app
+
+# Build
+out/*
+build/*
+
+# Cache
+.vs/*
+.qt/*
+.cache/*
