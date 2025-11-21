@@ -20,9 +20,14 @@ cmake_minimum_required(VERSION 3.16) # 3.16 required for Qt
     find_package(Qt6 REQUIRED COMPONENTS Core Widgets Gui)
     qt_standard_project_setup()
 
+# Automate everything
+    set(CMAKE_AUTOMOC ON)
+    set(CMAKE_AUTOUIC ON)
+    set(CMAKE_AUTORCC ON)
+
 # Find CXX files
     # Find all .cpp files in src/ and add them to executables
-        file(GLOB_RECURSE SOURCES "src/*.cpp")
+        file(GLOB_RECURSE SOURCES "src/*.cpp" "include/*.hpp")
         qt_add_executable(${PROJECT_NAME} ${SOURCES})
     # Include all headers in include/
         target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/include)
