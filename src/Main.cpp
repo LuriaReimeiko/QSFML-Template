@@ -1,6 +1,5 @@
+#include "MainWindow.hpp"
 #include <QApplication>
-#include <QMainWindow>
-#include <QIcon>
 #include <QScreen>
 
 int main(int argc, char* argv[])
@@ -18,7 +17,7 @@ int main(int argc, char* argv[])
 	int screenHeight = screenGeometry.height();
 
 	// Create the window
-	QMainWindow window;
+	MainWindow window;
 
 	// Set the window to the center of the screen
 	// at percentage% of the screen's size

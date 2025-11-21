@@ -1,5 +1,6 @@
 #include "QSFML.hpp"
 #include <QTimer>
+#include <SFML/Graphics.hpp>
 
 QSFML::QSFML(QWidget* parent) : QWidget(parent)
 {
@@ -36,11 +37,15 @@ void QSFML::showEvent(QShowEvent* event)
     }
 }
 
+sf::RectangleShape rectShape{sf::Vector2f{15.f,15.f}};
+
 void QSFML::paintEvent(QPaintEvent* event)
 {
     Q_UNUSED(event); // Tell Qt not to manage this event
 
     RenderWindow::clear();
+
+    RenderWindow::draw(rectShape);
 
     RenderWindow::display();
 }
