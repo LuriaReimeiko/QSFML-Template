@@ -3,4 +3,4 @@ A version which will by default have an empty window appear at the center of you
 
 Logic is written and heavily commented for a custom widget named QSFML which is inherits for sf::RenderWindow and is usable by SFML.
 
-**For an uncommented version of this, see branch Stripped-Commented**
+**For an uncommented version of this, see branch Stripped**
