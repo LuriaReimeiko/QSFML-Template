@@ -6,14 +6,14 @@
 
 // Inherit from QWidget to place on the QApplication
 // Inherit from sf::RenderWindow for less redundancy compared to storing one
-class QSFML : public QWidget, public sf::RenderWindow
+class QSFML : public QWidget
 {
 public:
     explicit QSFML(QWidget* parent = nullptr);
 
 protected:
     // Used as initialization call
-    void showEvent(QShowEvent* event) override;
+    void resizeEvent(QResizeEvent* event) override;
 
     // Update calls to the SFML render window
     void paintEvent(QPaintEvent* event) override;
@@ -22,6 +22,7 @@ protected:
     QPaintEngine* paintEngine() const override;
 
 private:
+    sf::RenderWindow window;
     bool initialized = false;
 };
 

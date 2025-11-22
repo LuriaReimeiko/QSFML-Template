@@ -3,8 +3,10 @@
 #include <QPushButton>
 #include <QSplitter>
 
-MainWindow::MainWindow(QWidget* widget) : QWidget(widget)
+MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent)
 {
+    setContextMenuPolicy(Qt::NoContextMenu);
+
     QSplitter* splitter = new QSplitter(Qt::Horizontal, this);
     splitter->setHandleWidth(4);
 
@@ -19,4 +21,7 @@ MainWindow::MainWindow(QWidget* widget) : QWidget(widget)
     
     buttonP->setText("Zoom In");
     buttonM->setText("Zoom Out");
+
+
+    setCentralWidget(splitter);
 }
